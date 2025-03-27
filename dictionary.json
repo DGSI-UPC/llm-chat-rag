@@ -75,11 +75,11 @@
         "type": "program"
     },
     "Campus Nord": {
-        "description": "Campus principal de la UPC en Barcelona donde se encuentra la FIB",
+        "description": "Campus principal de la UPC a Barcelona on es troba la FIB",
         "type": "location"
     },
     "Incoming": {
-        "description": "Estudiantes internacionales que vienen a estudiar a la universidad",
+        "description": "Estudiants internacionals que venen a estudiar a la universitat",
         "type": "student_category"
     },
     "Partner Universities": {
@@ -93,12 +93,12 @@
         "type": "academic_concept"
     },
     "TFG": {
-        "es": "Trabajo Final de Grado",
+        "es": "Treball de Fi de Grau",
         "en": "Bachelor's Thesis",
         "type": "academic_work"
     },
     "TFM": {
-        "es": "Trabajo Final de Máster",
+        "es": "Treball de Fi de Màster",
         "en": "Master's Thesis",
         "type": "academic_work"
     },
@@ -128,12 +128,12 @@
         "type": "program"
     },
     "GEI": {
-        "es": "Grado en Ingeniería Informática",
+        "es": "Grau en Enginyeria Informàtica",
         "en": "Bachelor's Degree in Informatics Engineering",
         "type": "degree"
     },
     "MEI": {
-        "es": "Máster en Ingeniería Informática",
+        "es": "Màster en Enginyeria Informàtica",
         "en": "Master's Degree in Informatics Engineering",
         "type": "degree"
     },
@@ -206,17 +206,17 @@
         "type": "concept"
     },
     "PAS": {
-        "es": "Personal de Administración y Servicios",
+        "es": "Personal d'Administració i Serveis",
         "en": "Administrative and Service Staff",
         "type": "staff_category"
     },
     "PDI": {
-        "es": "Personal Docente e Investigador",
+        "es": "Personal Docent i Investigador",
         "en": "Teaching and Research Staff",
         "type": "staff_category"
     },
     "EEES": {
-        "es": "Espacio Europeo de Educación Superior",
+        "es": "Espai Europeu d'Educació Superior",
         "en": "European Higher Education Area",
         "type": "concept"
     },
@@ -257,5 +257,878 @@
     "ACM": {
         "en": "Association for Computing Machinery",
         "type": "organization"
+    },
+    "UAB": {
+        "ca": "Universitat Autònoma de Barcelona",
+        "en": "Autonomous University of Barcelona",
+        "type": "organization"
+    },
+    "UB": {
+        "ca": "Universitat de Barcelona",
+        "en": "University of Barcelona",
+        "type": "organization"
+    },
+    "UPF": {
+        "ca": "Universitat Pompeu Fabra",
+        "en": "Pompeu Fabra University",
+        "type": "organization"
+    },
+    "URL": {
+        "ca": "Universitat Ramon Llull",
+        "en": "Ramon Llull University",
+        "type": "organization"
+    },
+    "UOC": {
+        "ca": "Universitat Oberta de Catalunya",
+        "en": "Open University of Catalonia",
+        "type": "organization"
+    },
+    "URV": {
+        "ca": "Universitat Rovira i Virgili",
+        "en": "Rovira i Virgili University",
+        "type": "organization"
+    },
+    "UdG": {
+        "ca": "Universitat de Girona",
+        "en": "University of Girona",
+        "type": "organization"
+    },
+    "UdL": {
+        "ca": "Universitat de Lleida",
+        "en": "University of Lleida",
+        "type": "organization"
+    },
+    "ESADE": {
+        "en": "ESADE Business School",
+        "type": "organization"
+    },
+    "IESE": {
+        "en": "IESE Business School",
+        "type": "organization"
+    },
+    "CERN": {
+        "en": "European Organization for Nuclear Research",
+        "fr": "Organisation européenne pour la recherche nucléaire",
+        "type": "organization"
+    },
+    "ESA": {
+        "en": "European Space Agency",
+        "type": "organization"
+    },
+    "NATO": {
+        "en": "North Atlantic Treaty Organization",
+        "type": "organization"
+    },
+    "CNRS": {
+        "fr": "Centre national de la recherche scientifique",
+        "en": "National Centre for Scientific Research",
+        "type": "organization"
+    },
+    "AQU": {
+        "ca": "Agència per a la Qualitat del Sistema Universitari de Catalunya",
+        "en": "Agency for the Quality of the University System of Catalonia",
+        "type": "organization"
+    },
+    "ANECA": {
+        "es": "Agencia Nacional de Evaluación de la Calidad y Acreditación",
+        "en": "National Agency for Quality Assessment and Accreditation",
+        "type": "organization"
+    },
+    "CNI": {
+        "es": "Centro Nacional de Inteligencia",
+        "en": "National Intelligence Center",
+        "type": "organization"
+    },
+    "CDTI": {
+        "es": "Centro para el Desarrollo Tecnológico Industrial",
+        "en": "Centre for the Development of Industrial Technology",
+        "type": "organization"
+    },
+    "CRUE": {
+        "es": "Conferencia de Rectores de las Universidades Españolas",
+        "en": "Conference of Rectors of Spanish Universities",
+        "type": "organization"
+    },
+    "CAE": {
+        "en": "Computer-Aided Engineering",
+        "es": "Ingeniería Asistida por Computadora",
+        "type": "field"
+    },
+    "CAD": {
+        "en": "Computer-Aided Design",
+        "es": "Diseño Asistido por Computadora",
+        "type": "field"
+    },
+    "CAM": {
+        "en": "Computer-Aided Manufacturing",
+        "es": "Fabricación Asistida por Computadora",
+        "type": "field"
+    },
+    "CMS": {
+        "en": "Content Management System",
+        "es": "Sistema de Gestión de Contenidos",
+        "type": "technology"
+    },
+    "DMS": {
+        "en": "Document Management System",
+        "es": "Sistema de Gestión Documental",
+        "type": "technology"
+    },
+    "ERP": {
+        "en": "Enterprise Resource Planning",
+        "es": "Planificación de Recursos Empresariales",
+        "type": "technology"
+    },
+    "CRM": {
+        "en": "Customer Relationship Management",
+        "es": "Gestión de Relaciones con Clientes",
+        "type": "technology"
+    },
+    "SCM": {
+        "en": "Supply Chain Management",
+        "es": "Gestión de la Cadena de Suministro",
+        "type": "field"
+    },
+    "BPM": {
+        "en": "Business Process Management",
+        "es": "Gestión de Procesos de Negocio",
+        "type": "field"
+    },
+    "BI": {
+        "en": "Business Intelligence",
+        "es": "Inteligencia de Negocios",
+        "type": "field"
+    },
+    "KPI": {
+        "en": "Key Performance Indicator",
+        "es": "Indicador Clave de Rendimiento",
+        "type": "concept"
+    },
+    "ROI": {
+        "en": "Return on Investment",
+        "es": "Retorno de Inversión",
+        "type": "concept"
+    },
+    "API": {
+        "en": "Application Programming Interface",
+        "es": "Interfaz de Programación de Aplicaciones",
+        "type": "technology"
+    },
+    "SDK": {
+        "en": "Software Development Kit",
+        "es": "Kit de Desarrollo de Software",
+        "type": "technology"
+    },
+    "IDE": {
+        "en": "Integrated Development Environment",
+        "es": "Entorno de Desarrollo Integrado",
+        "type": "technology"
+    },
+    "GUI": {
+        "en": "Graphical User Interface",
+        "es": "Interfaz Gráfica de Usuario",
+        "type": "technology"
+    },
+    "CLI": {
+        "en": "Command Line Interface",
+        "es": "Interfaz de Línea de Comandos",
+        "type": "technology"
+    },
+    "CSS": {
+        "en": "Cascading Style Sheets",
+        "type": "technology"
+    },
+    "HTML": {
+        "en": "HyperText Markup Language",
+        "type": "technology"
+    },
+    "XML": {
+        "en": "eXtensible Markup Language",
+        "type": "technology"
+    },
+    "JSON": {
+        "en": "JavaScript Object Notation",
+        "type": "technology"
+    },
+    "SQL": {
+        "en": "Structured Query Language",
+        "type": "technology"
+    },
+    "NoSQL": {
+        "en": "Not only SQL",
+        "type": "technology"
+    },
+    "RDBMS": {
+        "en": "Relational Database Management System",
+        "es": "Sistema de Gestión de Base de Datos Relacional",
+        "type": "technology"
+    },
+    "HTTP": {
+        "en": "HyperText Transfer Protocol",
+        "type": "protocol"
+    },
+    "HTTPS": {
+        "en": "HyperText Transfer Protocol Secure",
+        "type": "protocol"
+    },
+    "FTP": {
+        "en": "File Transfer Protocol",
+        "type": "protocol"
+    },
+    "SMTP": {
+        "en": "Simple Mail Transfer Protocol",
+        "type": "protocol"
+    },
+    "POP3": {
+        "en": "Post Office Protocol version 3",
+        "type": "protocol"
+    },
+    "IMAP": {
+        "en": "Internet Message Access Protocol",
+        "type": "protocol"
+    },
+    "TCP": {
+        "en": "Transmission Control Protocol",
+        "type": "protocol"
+    },
+    "IP": {
+        "en": "Internet Protocol",
+        "type": "protocol"
+    },
+    "UDP": {
+        "en": "User Datagram Protocol",
+        "type": "protocol"
+    },
+    "SSH": {
+        "en": "Secure Shell",
+        "type": "protocol"
+    },
+    "SSL": {
+        "en": "Secure Sockets Layer",
+        "type": "protocol"
+    },
+    "TLS": {
+        "en": "Transport Layer Security",
+        "type": "protocol"
+    },
+    "VPN": {
+        "en": "Virtual Private Network",
+        "es": "Red Privada Virtual",
+        "type": "technology"
+    },
+    "LAN": {
+        "en": "Local Area Network",
+        "es": "Red de Área Local",
+        "type": "technology"
+    },
+    "WAN": {
+        "en": "Wide Area Network",
+        "es": "Red de Área Amplia",
+        "type": "technology"
+    },
+    "SAN": {
+        "en": "Storage Area Network",
+        "es": "Red de Área de Almacenamiento",
+        "type": "technology"
+    },
+    "NAS": {
+        "en": "Network Attached Storage",
+        "es": "Almacenamiento Conectado en Red",
+        "type": "technology"
+    },
+    "RAID": {
+        "en": "Redundant Array of Independent Disks",
+        "type": "technology"
+    },
+    "SSD": {
+        "en": "Solid State Drive",
+        "es": "Unidad de Estado Sólido",
+        "type": "technology"
+    },
+    "HDD": {
+        "en": "Hard Disk Drive",
+        "es": "Disco Duro",
+        "type": "technology"
+    },
+    "RAM": {
+        "en": "Random Access Memory",
+        "es": "Memoria de Acceso Aleatorio",
+        "type": "technology"
+    },
+    "ROM": {
+        "en": "Read-Only Memory",
+        "es": "Memoria de Solo Lectura",
+        "type": "technology"
+    },
+    "CPU": {
+        "en": "Central Processing Unit",
+        "es": "Unidad Central de Procesamiento",
+        "type": "technology"
+    },
+    "GPU": {
+        "en": "Graphics Processing Unit",
+        "es": "Unidad de Procesamiento Gráfico",
+        "type": "technology"
+    },
+    "TPU": {
+        "en": "Tensor Processing Unit",
+        "type": "technology"
+    },
+    "FPGA": {
+        "en": "Field-Programmable Gate Array",
+        "type": "technology"
+    },
+    "ASIC": {
+        "en": "Application-Specific Integrated Circuit",
+        "type": "technology"
+    },
+    "IoE": {
+        "en": "Internet of Everything",
+        "es": "Internet de Todo",
+        "type": "concept"
+    },
+    "IIoT": {
+        "en": "Industrial Internet of Things",
+        "es": "Internet Industrial de las Cosas",
+        "type": "concept"
+    },
+    "AR": {
+        "en": "Augmented Reality",
+        "es": "Realidad Aumentada",
+        "type": "technology"
+    },
+    "VR": {
+        "en": "Virtual Reality",
+        "es": "Realidad Virtual",
+        "type": "technology"
+    },
+    "MR": {
+        "en": "Mixed Reality",
+        "es": "Realidad Mixta",
+        "type": "technology"
+    },
+    "XR": {
+        "en": "Extended Reality",
+        "es": "Realidad Extendida",
+        "type": "technology"
+    },
+    "DL": {
+        "en": "Deep Learning",
+        "es": "Aprendizaje Profundo",
+        "type": "field"
+    },
+    "NLP": {
+        "en": "Natural Language Processing",
+        "es": "Procesamiento de Lenguaje Natural",
+        "type": "field"
+    },
+    "CV": {
+        "en": "Computer Vision",
+        "es": "Visión por Computadora",
+        "type": "field"
+    },
+    "RL": {
+        "en": "Reinforcement Learning",
+        "es": "Aprendizaje por Refuerzo",
+        "type": "field"
+    },
+    "ANN": {
+        "en": "Artificial Neural Network",
+        "es": "Red Neuronal Artificial",
+        "type": "technology"
+    },
+    "CNN": {
+        "en": "Convolutional Neural Network",
+        "es": "Red Neuronal Convolucional",
+        "type": "technology"
+    },
+    "RNN": {
+        "en": "Recurrent Neural Network",
+        "es": "Red Neuronal Recurrente",
+        "type": "technology"
+    },
+    "GAN": {
+        "en": "Generative Adversarial Network",
+        "es": "Red Generativa Antagónica",
+        "type": "technology"
+    },
+    "SVM": {
+        "en": "Support Vector Machine",
+        "es": "Máquina de Vectores de Soporte",
+        "type": "technology"
+    },
+    "KNN": {
+        "en": "K-Nearest Neighbors",
+        "es": "K Vecinos más Cercanos",
+        "type": "algorithm"
+    },
+    "PCA": {
+        "en": "Principal Component Analysis",
+        "es": "Análisis de Componentes Principales",
+        "type": "algorithm"
+    },
+    "LLM": {
+        "en": "Large Language Model",
+        "es": "Modelo de Lenguaje de Gran Tamaño",
+        "type": "technology"
+    },
+    "RAG": {
+        "en": "Retrieval-Augmented Generation",
+        "es": "Generación Aumentada por Recuperación",
+        "type": "technology"
+    },
+    "SLAM": {
+        "en": "Simultaneous Localization and Mapping",
+        "es": "Localización y Mapeo Simultáneos",
+        "type": "algorithm"
+    },
+    "DevOps": {
+        "en": "Development and Operations",
+        "es": "Desarrollo y Operaciones",
+        "type": "methodology"
+    },
+    "CI/CD": {
+        "en": "Continuous Integration/Continuous Delivery",
+        "es": "Integración Continua/Entrega Continua",
+        "type": "methodology"
+    },
+    "TDD": {
+        "en": "Test-Driven Development",
+        "es": "Desarrollo Guiado por Pruebas",
+        "type": "methodology"
+    },
+    "BDD": {
+        "en": "Behavior-Driven Development",
+        "es": "Desarrollo Guiado por Comportamiento",
+        "type": "methodology"
+    },
+    "DDD": {
+        "en": "Domain-Driven Design",
+        "es": "Diseño Guiado por el Dominio",
+        "type": "methodology"
+    },
+    "SCRUM": {
+        "en": "SCRUM Agile Framework",
+        "es": "Marco de Trabajo Ágil SCRUM",
+        "type": "methodology"
+    },
+    "XP": {
+        "en": "Extreme Programming",
+        "es": "Programación Extrema",
+        "type": "methodology"
+    },
+    "REST": {
+        "en": "Representational State Transfer",
+        "type": "architecture"
+    },
+    "SOAP": {
+        "en": "Simple Object Access Protocol",
+        "type": "protocol"
+    },
+    "GraphQL": {
+        "en": "Graph Query Language",
+        "type": "technology"
+    },
+    "SaaS": {
+        "en": "Software as a Service",
+        "es": "Software como Servicio",
+        "type": "concept"
+    },
+    "PaaS": {
+        "en": "Platform as a Service",
+        "es": "Plataforma como Servicio",
+        "type": "concept"
+    },
+    "IaaS": {
+        "en": "Infrastructure as a Service",
+        "es": "Infraestructura como Servicio",
+        "type": "concept"
+    },
+    "FaaS": {
+        "en": "Function as a Service",
+        "es": "Función como Servicio",
+        "type": "concept"
+    },
+    "DaaS": {
+        "en": "Data as a Service",
+        "es": "Datos como Servicio",
+        "type": "concept"
+    },
+    "MaaS": {
+        "en": "Mobility as a Service",
+        "es": "Movilidad como Servicio",
+        "type": "concept"
+    },
+    "SEO": {
+        "en": "Search Engine Optimization",
+        "es": "Optimización para Motores de Búsqueda",
+        "type": "field"
+    },
+    "SEM": {
+        "en": "Search Engine Marketing",
+        "es": "Marketing en Motores de Búsqueda",
+        "type": "field"
+    },
+    "SMO": {
+        "en": "Social Media Optimization",
+        "es": "Optimización de Medios Sociales",
+        "type": "field"
+    },
+    "SMM": {
+        "en": "Social Media Marketing",
+        "es": "Marketing en Medios Sociales",
+        "type": "field"
+    },
+    "CTA": {
+        "en": "Call to Action",
+        "es": "Llamada a la Acción",
+        "type": "concept"
+    },
+    "UX": {
+        "en": "User Experience",
+        "es": "Experiencia de Usuario",
+        "type": "field"
+    },
+    "UI": {
+        "en": "User Interface",
+        "es": "Interfaz de Usuario",
+        "type": "field"
+    },
+    "IA": {
+        "es": "Inteligencia Artificial",
+        "en": "Artificial Intelligence",
+        "type": "field"
+    },
+    "QA": {
+        "en": "Quality Assurance",
+        "es": "Aseguramiento de la Calidad",
+        "type": "field"
+    },
+    "QC": {
+        "en": "Quality Control",
+        "es": "Control de Calidad",
+        "type": "field"
+    },
+    "UAT": {
+        "en": "User Acceptance Testing",
+        "es": "Pruebas de Aceptación del Usuario",
+        "type": "process"
+    },
+    "MVP": {
+        "en": "Minimum Viable Product",
+        "es": "Producto Mínimo Viable",
+        "type": "concept"
+    },
+    "POC": {
+        "en": "Proof of Concept",
+        "es": "Prueba de Concepto",
+        "type": "concept"
+    },
+    "B2B": {
+        "en": "Business to Business",
+        "es": "Negocio a Negocio",
+        "type": "concept"
+    },
+    "B2C": {
+        "en": "Business to Consumer",
+        "es": "Negocio a Consumidor",
+        "type": "concept"
+    },
+    "C2C": {
+        "en": "Consumer to Consumer",
+        "es": "Consumidor a Consumidor",
+        "type": "concept"
+    },
+    "G2C": {
+        "en": "Government to Citizen",
+        "es": "Gobierno a Ciudadano",
+        "type": "concept"
+    },
+    "P2P": {
+        "en": "Peer to Peer",
+        "es": "Entre Pares",
+        "type": "concept"
+    },
+    "BYOD": {
+        "en": "Bring Your Own Device",
+        "es": "Trae Tu Propio Dispositivo",
+        "type": "concept"
+    },
+    "COPE": {
+        "en": "Corporate Owned, Personally Enabled",
+        "type": "concept"
+    },
+    "MDM": {
+        "en": "Mobile Device Management",
+        "es": "Gestión de Dispositivos Móviles",
+        "type": "technology"
+    },
+    "EMM": {
+        "en": "Enterprise Mobility Management",
+        "es": "Gestión de Movilidad Empresarial",
+        "type": "technology"
+    },
+    "GDPR": {
+        "en": "General Data Protection Regulation",
+        "es": "Reglamento General de Protección de Datos",
+        "type": "regulation"
+    },
+    "CCPA": {
+        "en": "California Consumer Privacy Act",
+        "type": "regulation"
+    },
+    "HIPAA": {
+        "en": "Health Insurance Portability and Accountability Act",
+        "type": "regulation"
+    },
+    "PCI DSS": {
+        "en": "Payment Card Industry Data Security Standard",
+        "type": "standard"
+    },
+    "ISO 27001": {
+        "en": "Information Security Management System Standard",
+        "type": "standard"
+    },
+    "NIST": {
+        "en": "National Institute of Standards and Technology",
+        "type": "organization"
+    },
+    "ENS": {
+        "es": "Esquema Nacional de Seguridad",
+        "en": "National Security Framework",
+        "type": "regulation"
+    },
+    "GCED": {
+        "es": "Grau en Ciència i Enginyeria de Dades",
+        "en": "Bachelor's Degree in Data Science and Engineering",
+        "type": "degree"
+    },
+    "GIA": {
+        "es": "Grau en Intel·ligència Artificial",
+        "en": "Bachelor's Degree in Artificial Intelligence",
+        "type": "degree"
+    },
+    "GBI": {
+        "es": "Grau en Bioinformàtica",
+        "en": "Bachelor's Degree in Bioinformatics",
+        "type": "degree"
+    },
+    "inLab FIB": {
+        "description": "Laboratori d'innovació i recerca de la FIB",
+        "type": "organization"
+    },
+    "Pla d'estudis": {
+        "es": "Plan de estudios",
+        "en": "Curriculum",
+        "type": "academic_concept"
+    },
+    "Assignatures": {
+        "es": "Asignaturas",
+        "en": "Subjects",
+        "type": "academic_concept"
+    },
+    "AC": {
+        "es": "Arquitectura de Computadores",
+        "en": "Computer Architecture",
+        "type": "subject"
+    },
+    "SO": {
+        "es": "Sistemas Operativos",
+        "en": "Operating Systems",
+        "type": "subject"
+    },
+    "EDA": {
+        "es": "Estructuras de Datos y Algoritmos",
+        "en": "Data Structures and Algorithms",
+        "type": "subject"
+    },
+    "BD": {
+        "es": "Bases de Datos",
+        "en": "Databases",
+        "type": "subject"
+    },
+    "IA": {
+        "es": "Inteligencia Artificial",
+        "en": "Artificial Intelligence",
+        "type": "subject"
+    },
+    "CN": {
+        "es": "Comunicaciones de Redes",
+        "en": "Computer Networks",
+        "type": "subject"
+    },
+    "PL": {
+        "es": "Lenguajes de Programación",
+        "en": "Programming Languages",
+        "type": "subject"
+    },
+    "SEC": {
+        "es": "Seguridad Informática",
+        "en": "Computer Security",
+        "type": "subject"
+    },
+    "UXD": {
+        "es": "Diseño de Experiencia de Usuario",
+        "en": "User Experience Design",
+        "type": "subject"
+    },
+    "ML": {
+        "es": "Aprendizaje Automático",
+        "en": "Machine Learning",
+        "type": "subject"
+    },
+    "Competències": {
+        "es": "Competencias",
+        "en": "Competences",
+        "type": "academic_concept"
+    },
+    "Normativa acadèmica": {
+        "es": "Normativa académica",
+        "en": "Academic Regulations",
+        "type": "academic_concept"
+    },
+    "Horaris": {
+        "es": "Horarios",
+        "en": "Timetables",
+        "type": "academic_concept"
+    },
+    "Exàmens": {
+        "es": "Exámenes",
+        "en": "Exams",
+        "type": "academic_concept"
+    },
+    "Matrícula": {
+        "es": "Matrícula",
+        "en": "Enrolment",
+        "type": "academic_concept"
+    },
+    "Reavaluacions": {
+        "es": "Reevaluaciones",
+        "en": "Reassessments",
+        "type": "academic_concept"
+    },
+    "Especialitats": {
+        "es": "Especialidades",
+        "en": "Specializations",
+        "type": "academic_concept"
+    },
+    "Treball de Fi de Grau": {
+        "es": "Trabajo de Fin de Grado",
+        "en": "Bachelor's Thesis",
+        "type": "academic_work"
+    },
+    "Treball de Fi de Màster": {
+        "es": "Trabajo de Fin de Máster",
+        "en": "Master's Thesis",
+        "type": "academic_work"
+    },
+    "Guia d'acollida": {
+        "es": "Guía de acogida",
+        "en": "Welcome Guide",
+        "type": "document"
+    },
+    "Pla d'acció Tutorial": {
+        "es": "Plan de acción tutorial",
+        "en": "Tutorial Action Plan",
+        "type": "academic_concept"
+    },
+    "Aula Lliure": {
+        "es": "Aula Libre",
+        "en": "Open Classroom",
+        "type": "academic_concept"
+    },
+    "Mentories entre iguals": {
+        "es": "Mentorías entre iguales",
+        "en": "Peer Mentoring",
+        "type": "academic_concept"
+    },
+    "Tutories": {
+        "es": "Tutorías",
+        "en": "Tutorials",
+        "type": "academic_concept"
+    },
+    "Beques i Ajuts": {
+        "es": "Becas y Ayudas",
+        "en": "Scholarships and Grants",
+        "type": "academic_concept"
+    },
+    "Mobilitat": {
+        "es": "Movilidad",
+        "en": "Mobility",
+        "type": "academic_concept"
+    },
+    "Outgoing": {
+        "description": "Estudiants locals que participen en programes d'intercanvi",
+        "type": "student_category"
+    },
+    "Dobles titulacions": {
+        "es": "Dobles titulaciones",
+        "en": "Double Degrees",
+        "type": "academic_concept"
+    },
+    "Aliances Internacionals": {
+        "es": "Alianzas Internacionales",
+        "en": "International Alliances",
+        "type": "concept"
+    },
+    "Recerca": {
+        "es": "Investigación",
+        "en": "Research",
+        "type": "academic_concept"
+    },
+    "Departaments": {
+        "es": "Departamentos",
+        "en": "Departments",
+        "type": "academic_concept"
+    },
+    "Centres de Recerca": {
+        "es": "Centros de Investigación",
+        "en": "Research Centers",
+        "type": "academic_concept"
+    },
+    "Grups de Recerca": {
+        "es": "Grupos de Investigación",
+        "en": "Research Groups",
+        "type": "academic_concept"
+    },
+    "Empresa": {
+        "es": "Empresa",
+        "en": "Enterprise",
+        "type": "concept"
+    },
+    "Pràctiques en empresa": {
+        "es": "Prácticas en empresa",
+        "en": "Internships",
+        "type": "academic_concept"
+    },
+    "Borsa de treball": {
+        "es": "Bolsa de trabajo",
+        "en": "Job Board",
+        "type": "service"
+    },
+    "La FIB": {
+        "es": "La FIB",
+        "en": "The FIB",
+        "type": "organization"
+    },
+    "Espais": {
+        "es": "Espacios",
+        "en": "Spaces",
+        "type": "concept"
+    },
+    "Serveis TIC": {
+        "es": "Servicios TIC",
+        "en": "ICT Services",
+        "type": "service"
+    },
+    "Vida Universitària": {
+        "es": "Vida Universitaria",
+        "en": "University Life",
+        "type": "concept"
+    },
+    "Sistema de Qualitat": {
+        "es": "Sistema de Calidad",
+        "en": "Quality System",
+        "type": "concept"
     }
 }
