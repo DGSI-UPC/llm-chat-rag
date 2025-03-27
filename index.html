@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #log {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 300px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+        #input-container {
+            display: flex;
+            gap: 10px;
+        }
+        #message {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #send {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat Interface</h1>
+    <div id="log"></div>
+    <div id="input-container">
+        <input type="text" id="message" placeholder="Type your message here..." />
+        <button id="send">Send</button>
+    </div>
+
+    <script>
+        const log = document.getElementById('log');
+        const messageInput = document.getElementById('message');
+        const sendButton = document.getElementById('send');
+
+        sendButton.addEventListener('click', async () => {
+            const message = messageInput.value.trim();
+            if (!message) return;
+
+            // Display user message
+            log.innerHTML += `<div><strong>You:</strong> ${message}</div>`;
+            messageInput.value = '';
+
+            // Send message to the server
+            try {
+                const response = await fetch('http://localhost:8000/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message })
+                });
+
+                if (!response.ok) {
+                    log.innerHTML += `<div><strong>Error:</strong> Server returned status ${response.status}</div>`;
+                    return;
+                }
+
+                const data = await response.json();
+                console.log("Server response:", data); // Debug log
+
+                // Display server response
+                if (data.reply) {
+                    log.innerHTML += `<div><strong>Bot:</strong> ${data.reply}</div>`;
+                } else {
+                    log.innerHTML += `<div><strong>Error:</strong> No reply field in server response.</div>`;
+                }
+                log.scrollTop = log.scrollHeight; // Scroll to the bottom
+            } catch (error) {
+                console.error("Fetch error:", error); // Debug log
+                log.innerHTML += `<div><strong>Error:</strong> Unable to connect to the server.</div>`;
+            }
+        });
+    </script>
+</body>
+</html>

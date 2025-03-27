@@ -12,7 +12,10 @@ import time
 import json  # Add this import
 from typing import List, Dict, Any, Optional
 from dotenv import load_dotenv
-
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
 
 load_dotenv()
 
@@ -35,16 +38,22 @@ def setup_chroma():
     # Use OpenAI embeddings
     openai_ef = embedding_functions.OpenAIEmbeddingFunction(
         api_key=OPENAI_API_KEY,
-        model_name="text-embedding-3-small"
+        model_name="text-embedding-ada-002"  # Ensure this matches the model used
     )
     
     # Get or create the collection
     try:
-        collection = chroma_client.get_collection(name="markdown_docs", embedding_function=openai_ef)
+        collection = chroma_client.get_collection(name="markdown_docs")
         print(f"Connected to existing ChromaDB collection with {collection.count()} documents")
-    except Exception:
-        collection = chroma_client.create_collection(name="documents", embedding_function=openai_ef)
+    except ValueError as e:
+        # Handle the case where the collection does not exist
+        print(f"Collection not found: {e}. Creating a new collection...")
+        collection = chroma_client.create_collection(name="markdown_docs", embedding_function=openai_ef)
         print("Created new ChromaDB collection")
+    except Exception as e:
+        # Handle other exceptions
+        print(f"Unexpected error: {e}")
+        raise e
     
     return chroma_client, collection
 
@@ -275,115 +284,35 @@ def format_output(text: str) -> str:
     wrapper = textwrap.TextWrapper(width=80, break_long_words=False, replace_whitespace=False)
     return "\n".join(["\n".join(wrapper.wrap(line)) for line in text.splitlines()])
 
-def main():
-    """Main function to run the CLI."""
-    parser = argparse.ArgumentParser(description="LLM Chat RAG - A CLI chatbot with RAG capabilities")
-    parser.add_argument("--setup", action="store_true", help="Setup ChromaDB and exit")
-    args = parser.parse_args()
-    
-    # Check for API key
-    if not OPENAI_API_KEY:
-        print("Error: OpenAI API key not found. Please set the OPENAI_API_KEY environment variable.")
-        sys.exit(1)
-    
-    # Setup ChromaDB
+app = FastAPI()
+
+# Allow CORS for the frontend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.post("/chat")
+async def chat(request: Request):
+    """Handle chat requests from the frontend."""
+    data = await request.json()
+    user_message = data.get("message", "")
+
+    if not user_message:
+        return JSONResponse({"reply": "Please provide a valid message."}, status_code=400)
+
+    # Generate response using the existing logic
     try:
         chroma_client, collection = setup_chroma()
+        context_docs = retrieve_context(user_message, collection)
+        response = generate_response(user_message, context_docs)
+        print(f"Generated response: {response}")  # Debug log
+        return {"reply": response}
     except Exception as e:
-        print(f"Error setting up ChromaDB: {str(e)}")
-        sys.exit(1)
-    
-    # If just setting up, exit
-    if args.setup:
-        print("Setup complete. Exiting.")
-        sys.exit(0)
-    
-    print_welcome()
-    
-    # Main chat loop
-    last_sources = []
-    conversation_history = []  # Store the conversation history
-    
-    while True:
-        try:
-            # Get user input
-            user_input = input("\n> ")
-            
-            # Process commands
-            if user_input.lower() in ["/exit", "/quit", "exit", "quit"]:
-                print("Goodbye!")
-                break
-            elif user_input.lower() in ["/help", "help"]:
-                print_welcome()
-                continue
-            elif user_input.lower() in ["/sources", "sources"]:
-                if last_sources:
-                    print("\nSources:")
-                    for source in last_sources:
-                        print(f"  - {source}")
-                else:
-                    print("No sources available for the last response.")
-                continue
-            elif not user_input.strip():
-                continue
-            
-            # Add user message to history (without context)
-            conversation_history.append({"role": "user", "content": user_input})
-            
-            # RAG process
-            print("\nProcessing your question...")
-            start_time = time.time()
-            
-            # Augment the query and get concept information
-            print("Generating related questions...")
-            augmented_queries, mentioned_concepts = augment_query(user_input)
-            
-            print(f"Searching for relevant information using {len(augmented_queries)} queries...")
-            
-            # Retrieve context using multiple queries
-            context_docs = retrieve_context_multi(augmented_queries, collection)
-            
-            # Save sources
-            last_sources = [doc["metadata"].get("source", "Unknown") for doc in context_docs if "source" in doc["metadata"]]
-            
-            # Generate response
-            print("Generating answer...")
-            
-            # Extract the last 5 exchanges (10 messages or fewer) for the history context
-            recent_history = conversation_history[-10:] if len(conversation_history) > 10 else conversation_history[:]
-            
-            # Generate response with history context, VDB results, and concept information
-            response = generate_response(
-                user_input, 
-                context_docs, 
-                recent_history[:-1],
-                mentioned_concepts
-            )
-            
-            # Extract answer without sources for conversation history
-            answer_only = response
-            if "\n\nSources:" in response:
-                answer_only = response.split("\n\nSources:")[0]
-                
-            # Add assistant response to history
-            conversation_history.append({"role": "assistant", "content": answer_only})
-            
-            # Keep only the last 5 exchanges (10 messages) in history
-            if len(conversation_history) > 10:
-                conversation_history = conversation_history[-10:]
-            
-            # Print response
-            elapsed_time = time.time() - start_time
-            print(f"\nResponse (generated in {elapsed_time:.2f}s):")
-            print("=" * 80)
-            print(format_output(response))
-            print("=" * 80)
-            
-        except KeyboardInterrupt:
-            print("\nExiting...")
-            break
-        except Exception as e:
-            print(f"Error: {str(e)}")
+        print(f"Error: {str(e)}")  # Debug log
+        return {"reply": f"Error: {str(e)}"}
 
 if __name__ == "__main__":
-    main()
+    uvicorn.run(app, host="0.0.0.0", port=8000)
