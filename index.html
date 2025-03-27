@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        /* Chat Container */
+        #chat-container {
+            width: 90%;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Chat Log */
+        #log {
+            flex: 1;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            overflow-y: auto;
+            background-color: #f9f9f9;
+        }
+
+        #log div {
+            margin-bottom: 10px;
+        }
+
+        #log div strong {
+            color: #4CAF50;
+        }
+
+        /* Input Container */
+        #input-container {
+            display: flex;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        #message {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        #message:focus {
+            border-color: #4CAF50;
+        }
+
+        #send {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+
+        #send:hover {
+            background-color: #45a049;
+        }
+
+        #send:active {
+            background-color: #3e8e41;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            #send {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            #message {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat with AI</h1>
+    <div id="chat-container">
+        <div id="log"></div>
+        <div id="input-container">
+            <input type="text" id="message" placeholder="Type your message here..." />
+            <button id="send">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const log = document.getElementById('log');
+        const messageInput = document.getElementById('message');
+        const sendButton = document.getElementById('send');
+
+        sendButton.addEventListener('click', async () => {
+            const message = messageInput.value.trim();
+            if (!message) return;
+
+            // Display user message
+            log.innerHTML += `<div><strong>You:</strong> ${message}</div>`;
+            messageInput.value = '';
+
+            // Send message to the server
+            try {
+                const response = await fetch('http://localhost:8000/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message })
+                });
+
+                if (!response.ok) {
+                    log.innerHTML += `<div><strong>Error:</strong> Server returned status ${response.status}</div>`;
+                    return;
+                }
+
+                const data = await response.json();
+                console.log("Server response:", data); // Debug log
+
+                // Display server response
+                if (data.reply) {
+                    log.innerHTML += `<div><strong>Bot:</strong> ${data.reply}</div>`;
+                } else {
+                    log.innerHTML += `<div><strong>Error:</strong> No reply field in server response.</div>`;
+                }
+                log.scrollTop = log.scrollHeight; // Scroll to the bottom
+            } catch (error) {
+                console.error("Fetch error:", error); // Debug log
+                log.innerHTML += `<div><strong>Error:</strong> Unable to connect to the server.</div>`;
+            }
+        });
+
+        // Allow pressing Enter to send the message
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendButton.click();
+            }
+        });
+    </script>
+</body>
+</html>
